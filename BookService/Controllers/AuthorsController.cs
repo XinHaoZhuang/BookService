@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.Description;
-using BookService.Models;
+﻿// <copyright file="AuthorsController.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace BookService.Controllers
 {
+    using System.Data.Entity;
+    using System.Data.Entity.Infrastructure;
+    using System.Linq;
+    using System.Net;
+    using System.Threading.Tasks;
+    using System.Web.Http;
+    using System.Web.Http.Description;
+    using BookService.Models;
+
     public class AuthorsController : ApiController
     {
         private BookServiceContext db = new BookServiceContext();
@@ -20,47 +20,47 @@ namespace BookService.Controllers
         // GET: api/Authors
         public IQueryable<Author> GetAuthors()
         {
-            return db.Authors;
+            return this.db.Authors;
         }
 
         // GET: api/Authors/5
         [ResponseType(typeof(Author))]
         public async Task<IHttpActionResult> GetAuthor(int id)
         {
-            Author author = await db.Authors.FindAsync(id);
+            Author author = await this.db.Authors.FindAsync(id);
             if (author == null)
             {
-                return NotFound();
+                return this.NotFound();
             }
 
-            return Ok(author);
+            return this.Ok(author);
         }
 
         // PUT: api/Authors/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutAuthor(int id, Author author)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return this.BadRequest(this.ModelState);
             }
 
             if (id != author.Id)
             {
-                return BadRequest();
+                return this.BadRequest();
             }
 
-            db.Entry(author).State = EntityState.Modified;
+            this.db.Entry(author).State = EntityState.Modified;
 
             try
             {
-                await db.SaveChangesAsync();
+                await this.db.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AuthorExists(id))
+                if (!this.AuthorExists(id))
                 {
-                    return NotFound();
+                    return this.NotFound();
                 }
                 else
                 {
@@ -68,52 +68,53 @@ namespace BookService.Controllers
                 }
             }
 
-            return StatusCode(HttpStatusCode.NoContent);
+            return this.StatusCode(HttpStatusCode.NoContent);
         }
 
         // POST: api/Authors
         [ResponseType(typeof(Author))]
         public async Task<IHttpActionResult> PostAuthor(Author author)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
-                return BadRequest(ModelState);
+                return this.BadRequest(this.ModelState);
             }
 
-            db.Authors.Add(author);
-            await db.SaveChangesAsync();
+            this.db.Authors.Add(author);
+            await this.db.SaveChangesAsync();
 
-            return CreatedAtRoute("DefaultApi", new { id = author.Id }, author);
+            return this.CreatedAtRoute("DefaultApi", new { id = author.Id }, author);
         }
 
         // DELETE: api/Authors/5
         [ResponseType(typeof(Author))]
         public async Task<IHttpActionResult> DeleteAuthor(int id)
         {
-            Author author = await db.Authors.FindAsync(id);
+            Author author = await this.db.Authors.FindAsync(id);
             if (author == null)
             {
-                return NotFound();
+                return this.NotFound();
             }
 
-            db.Authors.Remove(author);
-            await db.SaveChangesAsync();
+            this.db.Authors.Remove(author);
+            await this.db.SaveChangesAsync();
 
-            return Ok(author);
+            return this.Ok(author);
         }
 
         protected override void Dispose(bool disposing)
         {
             if (disposing)
             {
-                db.Dispose();
+                this.db.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
         private bool AuthorExists(int id)
         {
-            return db.Authors.Count(e => e.Id == id) > 0;
+            return this.db.Authors.Count(e => e.Id == id) > 0;
         }
     }
 }

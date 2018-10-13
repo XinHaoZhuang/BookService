@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="BookServiceContext-Web.config Connection String" description="BookServiceContext 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="Data Source=59.110.152.236; Initial Catalog=SczmWebApi; Persist Security Info=False; Integrated Security=False; MultipleActiveResultSets=True; User ID=sczm; Password=Zhx15763038376" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Administrator\\source\\repos\\BookService\\BookService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BookServiceContext']/@connectionString" />
+  </parameter>
+  <parameter name="BookServiceContext_DatabasePublish-Web.config Connection String" description="BookServiceContext_DatabasePublish 由应用程序在 web.config 中用来访问数据库的连接字符串。" defaultValue="BookServiceContext_DatabasePublish.ConnetionString" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Administrator\\source\\repos\\BookService\\BookService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='BookServiceContext_DatabasePublish']/@connectionString" />
+  </parameter>
+</parameters>

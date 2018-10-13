@@ -1,10 +1,14 @@
-using System;
-using System.Text;
-using System.Web;
-using System.Web.Http.Description;
+// <copyright file="ApiDescriptionExtensions.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace BookService.Areas.HelpPage
 {
+    using System;
+    using System.Text;
+    using System.Web;
+    using System.Web.Http.Description;
+
     public static class ApiDescriptionExtensions
     {
         /// <summary>
@@ -22,17 +26,19 @@ namespace BookService.Areas.HelpPage
             {
                 string query = urlParts[1];
                 string[] queryKeys = HttpUtility.ParseQueryString(query).AllKeys;
-                queryKeyString = String.Join("_", queryKeys);
+                queryKeyString = string.Join("_", queryKeys);
             }
 
             StringBuilder friendlyPath = new StringBuilder();
-            friendlyPath.AppendFormat("{0}-{1}",
+            friendlyPath.AppendFormat(
+                "{0}-{1}",
                 description.HttpMethod.Method,
-                localPath.Replace("/", "-").Replace("{", String.Empty).Replace("}", String.Empty));
+                localPath.Replace("/", "-").Replace("{", string.Empty).Replace("}", string.Empty));
             if (queryKeyString != null)
             {
                 friendlyPath.AppendFormat("_{0}", queryKeyString.Replace('.', '-'));
             }
+
             return friendlyPath.ToString();
         }
     }

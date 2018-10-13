@@ -1,8 +1,12 @@
-using System.Web.Http;
-using System.Web.Mvc;
+// <copyright file="HelpPageAreaRegistration.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace BookService.Areas.HelpPage
 {
+    using System.Web.Http;
+    using System.Web.Mvc;
+
     public class HelpPageAreaRegistration : AreaRegistration
     {
         public override string AreaName

@@ -1,7 +1,11 @@
-using System;
+// <copyright file="ModelNameAttribute.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace BookService.Areas.HelpPage.ModelDescriptions
 {
+    using System;
+
     /// <summary>
     /// Use this attribute to change the name of the <see cref="ModelDescription"/> generated for a type.
     /// </summary>
@@ -10,7 +14,7 @@ namespace BookService.Areas.HelpPage.ModelDescriptions
     {
         public ModelNameAttribute(string name)
         {
-            Name = name;
+            this.Name = name;
         }
 
         public string Name { get; private set; }

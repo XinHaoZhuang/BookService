@@ -1,8 +1,11 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿// <copyright file="BundleConfig.cs" company="PlaceholderCompany">
+// Copyright (c) PlaceholderCompany. All rights reserved.
+// </copyright>
 
 namespace BookService
 {
+    using System.Web.Optimization;
+
     public class BundleConfig
     {
         // 有关捆绑的详细信息，请访问 https://go.microsoft.com/fwlink/?LinkId=301862
@@ -24,8 +27,7 @@ namespace BookService
                       "~/Content/site.css"));
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                     "~/Scripts/knockout-{version}.js",
-                    "~/Scripts/app.js"
-                ));
+                    "~/Scripts/app.js"));
         }
     }
 }
