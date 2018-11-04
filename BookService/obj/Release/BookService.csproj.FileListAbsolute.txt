@@ -107,9 +107,13 @@ C:\Users\Administrator\source\repos\BookService\BookService\bin\zh-Hans\System.W
 C:\Users\Administrator\source\repos\BookService\BookService\bin\zh-Hans\System.Web.WebPages.Deployment.resources.dll
 C:\Users\Administrator\source\repos\BookService\BookService\bin\zh-Hans\System.Web.WebPages.Razor.resources.dll
 C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.csprojAssemblyReference.cache
-C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.Migrations.Initial.resources
-C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.csproj.GenerateResource.cache
 C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.csproj.CopyComplete
 C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.dll
 C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.pdb
+C:\Users\Administrator\source\repos\BookService\BookService\bin\System.Web.Cors.dll
+C:\Users\Administrator\source\repos\BookService\BookService\bin\System.Web.Http.Cors.dll
+C:\Users\Administrator\source\repos\BookService\BookService\bin\System.Web.Http.Cors.xml
+C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.Migrations.Initial.resources
+C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.Migrations.basecustomer.resources
+C:\Users\Administrator\source\repos\BookService\BookService\obj\Release\BookService.csproj.GenerateResource.cache

@@ -18,16 +18,16 @@ namespace BookService.Controllers
         private readonly BookServiceContext db = new BookServiceContext();
 
         // GET: api/SysMenus
-        public IQueryable<SysMenu> GetMenus()
+        public IQueryable<SysMenus> GetMenus()
         {
             return this.db.SysMenus;
         }
 
         // GET: api/SysMenus/5
-        [ResponseType(typeof(SysMenu))]
+        [ResponseType(typeof(SysMenus))]
         public async Task<IHttpActionResult> GetSysMenu(int id)
         {
-            SysMenu sysMenu = await this.db.SysMenus.FindAsync(id);
+            SysMenus sysMenu = await this.db.SysMenus.FindAsync(id);
             if (sysMenu == null)
             {
                 return this.NotFound();
@@ -38,7 +38,7 @@ namespace BookService.Controllers
 
         // PUT: api/SysMenus/5
         [ResponseType(typeof(void))]
-        public async Task<IHttpActionResult> PutSysMenu(int id, SysMenu sysMenu)
+        public async Task<IHttpActionResult> PutSysMenu(int id, SysMenus sysMenu)
         {
             if (!this.ModelState.IsValid)
             {
@@ -72,8 +72,8 @@ namespace BookService.Controllers
         }
 
         // POST: api/SysMenus
-        [ResponseType(typeof(SysMenu))]
-        public async Task<IHttpActionResult> PostSysMenu(SysMenu sysMenu)
+        [ResponseType(typeof(SysMenus))]
+        public async Task<IHttpActionResult> PostSysMenu(SysMenus sysMenu)
         {
             if (!this.ModelState.IsValid)
             {
@@ -87,10 +87,10 @@ namespace BookService.Controllers
         }
 
         // DELETE: api/SysMenus/5
-        [ResponseType(typeof(SysMenu))]
+        [ResponseType(typeof(SysMenus))]
         public async Task<IHttpActionResult> DeleteSysMenu(int id)
         {
-            SysMenu sysMenu = await this.db.SysMenus.FindAsync(id);
+            SysMenus sysMenu = await this.db.SysMenus.FindAsync(id);
             if (sysMenu == null)
             {
                 return this.NotFound();

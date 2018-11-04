@@ -75,7 +75,7 @@ namespace BookService.Migrations
 
             context.SysMenus.AddOrUpdate(
                 x => x.Id,
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 1,
                     MenuName = "基础设置",
@@ -85,7 +85,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 2,
                     MenuName = "维修业务",
@@ -95,7 +95,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 3,
                     MenuName = "报表中心",
@@ -105,7 +105,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 4,
                     MenuName = "系统管理",
@@ -115,7 +115,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 5,
                     MenuName = "客户类别",
@@ -125,7 +125,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 6,
                     MenuName = "机型",
@@ -135,7 +135,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 7,
                     MenuName = "维修意向",
@@ -145,7 +145,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 8,
                     MenuName = "入厂登记",
@@ -155,7 +155,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 9,
                     MenuName = "维修台账",
@@ -165,7 +165,7 @@ namespace BookService.Migrations
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
                 },
-                new SysMenu()
+                new SysMenus()
                 {
                     Id = 10,
                     MenuName = "菜单设置",
@@ -174,6 +174,62 @@ namespace BookService.Migrations
                     FlagDel = 0,
                     OperaName = "系统管理员",
                     OperaTime = DateTime.Parse("2018-10-13")
+                });
+            context.BaseCustomerTypes.AddOrUpdate(
+                x => x.Id,
+                new Models.Base.BaseCustomerType()
+                {
+                    Id = 1,
+                    CustomerTypeName = "外部客户",
+                    FlagRegister = 1,
+                    FlagDel = 0,
+                    OperaName = "系统管理员",
+                    OperaTime = DateTime.Parse("2018-10-14")
+                },
+                new Models.Base.BaseCustomerType()
+                {
+                    Id = 2,
+                    CustomerTypeName = "内部部门",
+                    FlagRegister = 0,
+                    FlagDel = 0,
+                    OperaName = "系统管理员",
+                    OperaTime = DateTime.Parse("2018-10-16")
+                });
+            context.Medals.AddOrUpdate(
+                x => x.Id,
+                new Medal()
+                {
+                    Id = 1,
+                    Name = "分享勋章",
+                    Title = "参与分享5次，就能获取此勋章哦",
+                    Experience = 5,
+                    Detail = "分享勋章的来历和意义",
+                    MedalImageId = 1
+                },
+                new Medal()
+                {
+                    Id = 2,
+                    Name = "义卖达人",
+                    Title = "发起3次义卖，为公益添砖加瓦",
+                    Experience = 3,
+                    Detail = "分享勋章的来历和意义",
+                    MedalImageId = 2
+                });
+            context.MedalImages.AddOrUpdate(
+                x => x.Id,
+                new MedalImage()
+                {
+                    Id = 1,
+                    ImageSmall = "小图片地址1",
+                    ImageMiddle = "中等图片地址1",
+                    ImageLarge = "大型图片地址1"
+                },
+                new MedalImage()
+                {
+                    Id = 2,
+                    ImageSmall = "小图片地址2",
+                    ImageMiddle = "中等图片地址2",
+                    ImageLarge = "大型图片地址2"
                 });
         }
     }

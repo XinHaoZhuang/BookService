@@ -23,8 +23,14 @@ namespace BookService.Models
 
         public System.Data.Entity.DbSet<BookService.Models.Author> Authors { get; set; }
 
+        public System.Data.Entity.DbSet<BookService.Models.SysMenus> SysMenus { get; set; }
+
         public System.Data.Entity.DbSet<BookService.Models.Book> Books { get; set; }
 
-        public System.Data.Entity.DbSet<BookService.Models.SysMenu> SysMenus { get; set; }
+        public System.Data.Entity.DbSet<BookService.Models.Base.BaseCustomerType> BaseCustomerTypes { get; set; }
+
+        public System.Data.Entity.DbSet<BookService.Models.Medal> Medals { get; set; }
+
+        public System.Data.Entity.DbSet<BookService.Models.MedalImage> MedalImages { get; set; }
     }
 }
